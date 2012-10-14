@@ -31,10 +31,12 @@ public class EnrolmentManager {
 	 *
 	 */
 	public boolean add(Student s, Class c) {
+		if(s != null && c != null){
 		Enrolment enrol = new Enrolment(s, c);
 		if (!enrolments.contains(enrol)) {
 			enrolments.add(enrol)
 			return true;
+		}
 		}
 		return false;
 	}
