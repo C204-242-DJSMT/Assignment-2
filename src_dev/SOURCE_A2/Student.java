@@ -1,9 +1,20 @@
-//package com.github.C204_242_DJSM.Assignment_2;
+package com.github.C204_242_DJSMT.Assignment_2;
 
-public class Student {
-	String name;
+/**
+ * Represents an individual student.
+ */
+public class Student extends User {
+	/**
+	 *
+	 */
+	public Student(String name) {
+		super(name);
+	}
 
-	public Student() {
-		
+	/**
+	 *
+	 */
+	public String toString() {
+		return "Student: " + super.toString();
 	}	
 }

@@ -1,21 +1,25 @@
-//package com.github.C204_242_DJSM.Assignment_2;
+package com.github.C204_242_DJSMT.Assignment_2;
 
-import java.util.*;
+import java.util.List;
+import java.util.Date;
 import java.sql.Timestamp;
 
 /**
- *
+ * Stores an object and an expiry time for the TimeOutList structure.
  */
 class TimeOutListItem<T extends Deleteable> {
+	// The object being stored.
 	public final T item;
+	// Time when this record expires and should be deleted permanantly.
 	public final Timestamp timeOut;
+	// Collection where item was previously stored.
 	public final List oldLocation;
 
 	/**
 	 *
 	 */
 	public TimeOutListItem(T item, List old) {
-		if (item == null || old == null || old.contains(item))
+		if (item == null || old == null)
 			throw new IllegalArgumentException();
 		this.timeOut = new Timestamp(new Date().getTime() + item.getTimeOut());
 		this.item = item;
@@ -23,7 +27,7 @@ class TimeOutListItem<T extends Deleteable> {
 	}
 
 	/**
-	 *
+	 * Restores the item to the list object it was previously stored in.
 	 */
 	public void restore() {
 		this.oldLocation.add(item);

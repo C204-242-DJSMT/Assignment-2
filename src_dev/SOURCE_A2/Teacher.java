@@ -1,16 +1,21 @@
-//package com.github.C204_242_DJSM.Assignment_2;
+package com.github.C204_242_DJSMT.Assignment_2;
 
 /**
- *
+ * Represents an individual teacher user.
  */
-public class Teacher {
-	String name;
+public class Teacher extends user {
 
 	/**
 	 *
 	 */
 	public Teacher(String name) {
-		if (name == null || name == "")
-			throw new IllegalArgumentException();
+		super(name);
+	}
+
+	/**
+	 *
+	 */
+	public String toString() {
+		return "Teacher: " + super.toString();
 	}
 }
