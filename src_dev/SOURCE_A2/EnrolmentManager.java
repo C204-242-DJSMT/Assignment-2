@@ -44,7 +44,25 @@ public class EnrolmentManager {
 	/**
 	 *
 	 */
-	public void delete() {
-
+	public void delete(Student s, Class c) {
+		if(s != null & c != null){
+			Enrolment delete = new Enrolment(s,c);
+			if(enrolments.contains(delete)){
+				enrolments.remove(delete);
+				deletedEnrolments.add(delete);
+				
+				if(!checkDeleted(delete))
+					delete(s,c);
+			}
+		}
 	}
+	
+	private booleen checkDeleted(Enrolment e){
+		assert(e != null);
+		if(!enrolments.contains(e) && deletedEnrolment.contains(e))
+			return true;
+		
+		return false;
+	}
+
 }
