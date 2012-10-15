@@ -51,18 +51,45 @@ public class EnrolmentManager {
 				enrolments.remove(delete);
 				deletedEnrolments.add(delete);
 				
-				if(!checkDeleted(delete))
+				if(!checkDeleted(delete, true))
 					delete(s,c);
 			}
 		}
 	}
 	
-	private booleen checkDeleted(Enrolment e){
+/*
+	* Checks if its in temporary list and not in enrolment List if delete is true
+	* Checks if its in enrolment list anbd not in deleted if delete is false
+	*/
+	private booleen checkEntry(Enrolment e, boolean delete){
 		assert(e != null);
-		if(!enrolments.contains(e) && deletedEnrolment.contains(e))
-			return true;
+		boolean isThere = false;
+		if(!enrolment.contains(e) && deletedEnrolments.contains(e))
+			isThere = true;
+		else
+			isThere =false;
+		}
+		if(delete)
+			return isThere;
+	
+		return !isThere;
 		
-		return false;
 	}
 
+	/*
+	* Restores enrty from deleted list to enrolments list
+	*/
+	public void restore(Student s, Class c){
+		if(C != null && s != null){
+			Enrolment restore = new Enrolment(c,s);
+			if(deletedEnrolments.contains(restore)){
+				deletedEnrolments.remove(restore);
+				enrolments.add(restore);
+
+				if(!checkEntry(restore, false))
+					restore(s,c);
+			}
+		}
+	}
+	
 }
