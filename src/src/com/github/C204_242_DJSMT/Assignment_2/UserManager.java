@@ -20,6 +20,14 @@ public class UserManager {
 		
 		this.userList = new LinkedList<User>();
 	}
+	
+	public boolean addTeacher(String name) {
+		return userList.add(new Teacher(name));
+	}
+	
+	public boolean addStudent(String name) {
+		return userList.add(new Student(name));
+	}
 
 	/**
 	 * Returns the singleton instance UserManager.

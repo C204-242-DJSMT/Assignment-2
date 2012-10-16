@@ -3,7 +3,7 @@ package com.github.C204_242_DJSMT.Assignment_2;
 import java.util.LinkedList;
 
 /**
- * Manager class for all student-class enrolment association objects.
+ * Manager class for all student-class enrollment association objects.
  */
 public class EnrolmentManager {
 	//
@@ -36,7 +36,7 @@ public class EnrolmentManager {
 	/**
 	 *
 	 */
-	public boolean addEnrolment(Student s, Class c) {
+	public boolean addEnrolment(Student s, ClassGroup c) {
 		Enrolment enrol = new Enrolment(s, c);
 		if (!this.enrolments.contains(enrol)) {
 			this.enrolments.add(enrol);
@@ -50,14 +50,7 @@ public class EnrolmentManager {
 	/**
 	 *
 	 */
-	public void delete() {
-
-	}
-
-	/**
-	 *
-	 */
-	public void deleteOld() {
-		this.deletedEnrolments.deleteOld();
+	public boolean delete(Enrolment enrol) {
+		return this.deletedEnrolments.add(enrol, this.enrolments);
 	}
 }

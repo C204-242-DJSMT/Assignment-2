@@ -15,7 +15,6 @@ public class DataController {
 	//
 	static private DataController singleton = null;
 	//
-	private static boolean running = false;
 
 	/**
 	 * Returns the singleton instance of the DataController class.
@@ -38,24 +37,4 @@ public class DataController {
 		this.classManager = ClassManager.getInstance();
 		this.userManager = UserManager.getInstance();
 	}
-
-	/**
-	 *
-	 */
-	// public void run() {
-	// 	if (running)
-	// 		return;
-	// 	running = true;
-	// 	while(true) {
-	// 		synchronized(this.enrolmentManager) {
-	// 			this.enrolmentManager.deleteOld()
-	// 		}
-	// 		synchronized(this.teachingManager) {
-	// 			this.teachingManager.deleteOld();
-	// 		}
-	// 		try {
-	// 			sleep(1000 * 60 * 60);
-	// 		} catch (InterruptedException x);
-	// 	}
-	// }
 }

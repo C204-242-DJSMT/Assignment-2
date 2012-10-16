@@ -9,7 +9,7 @@ public class ClassManager {
 	//
 	static private ClassManager singleton = null;
 	//
-	private LinkedList<Class> classList = null;
+	private LinkedList<ClassGroup> classList = null;
 	
 	/**
 	 *
@@ -18,7 +18,7 @@ public class ClassManager {
 		// Constructor should never be called twice.
 		assert (singleton == null);
 		
-		this.classList = new LinkedList<Class>();
+		this.classList = new LinkedList<ClassGroup>();
 	}
 
 	/**
@@ -34,7 +34,7 @@ public class ClassManager {
 	 *
 	 */
 	public boolean addClass(String name, String description) {
-		Class newClass = new Class(name, description);
+		ClassGroup newClass = new ClassGroup(name, description);
 		if (!this.classList.contains(newClass)) {
 			this.classList.add(newClass);
 			return true;

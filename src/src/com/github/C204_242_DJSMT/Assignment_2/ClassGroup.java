@@ -3,7 +3,7 @@ package com.github.C204_242_DJSMT.Assignment_2;
 /**
  * Represents a class of students or similar teaching group.
  */
-public class Class {
+public class ClassGroup {
 	//
 	String name;
 	//
@@ -12,7 +12,7 @@ public class Class {
 	/**
 	 * Instantiates a new Class object. 
 	 */
-	public Class(String name, String description) {
+	public ClassGroup(String name, String description) {
 		if (name == null || name == "" || description == null || description == "")
 			throw new IllegalArgumentException();
 		this.name = name;
@@ -30,8 +30,8 @@ public class Class {
 	 * 
 	 */
 	public boolean equals(Object obj) {
-		if (obj instanceof Class)
-			return ((Class)obj).name == this.name;
+		if (obj instanceof ClassGroup)
+			return ((ClassGroup)obj).name == this.name;
 		return false;
 	}
 }

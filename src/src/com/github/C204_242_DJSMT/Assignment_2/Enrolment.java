@@ -7,14 +7,14 @@ public class Enrolment implements Deleteable {
 	//
 	public final Student enrolledStudent;
 	//
-	public final Class enrolledClass;
+	public final ClassGroup enrolledClass;
 	//
 	private static int deleteTimeout = 60 * 60 * 1000;
 
 	/**
 	 *
 	 */
-	public Enrolment(Student s, Class c)  {
+	public Enrolment(Student s, ClassGroup c)  {
 		if (s == null || c == null)
 			throw new IllegalArgumentException();
 		this.enrolledStudent = s;

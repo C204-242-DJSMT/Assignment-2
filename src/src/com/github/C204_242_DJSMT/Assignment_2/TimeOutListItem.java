@@ -18,7 +18,7 @@ class TimeOutListItem<T extends Deleteable> {
 	/**
 	 *
 	 */
-	public TimeOutListItem(T item, List old) {
+	public TimeOutListItem(T item, List<T> old) {
 		if (item == null || old == null)
 			throw new IllegalArgumentException();
 		this.timeOut = new Timestamp(new Date().getTime() + item.getTimeOut());

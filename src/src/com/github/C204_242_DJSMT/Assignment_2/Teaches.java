@@ -7,7 +7,7 @@ public class Teaches implements Deleteable {
 	//
 	public final Teacher teacher;
 	//
-	public final Class classTaught;
+	public final ClassGroup classTaught;
 	//
 	private static int deleteTimeout = 60 * 60 * 1000;
 
@@ -21,7 +21,7 @@ public class Teaches implements Deleteable {
 	/**
 	 *
 	 */
-	public Teaches(Class c, Teacher t) {
+	public Teaches(ClassGroup c, Teacher t) {
 		if (c == null || t == null) 
 			throw new IllegalArgumentException();
 		this.teacher = t;

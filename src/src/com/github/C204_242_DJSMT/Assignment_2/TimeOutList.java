@@ -21,12 +21,14 @@ public class TimeOutList<T extends Deleteable> {
 
 	/**
 	 * Adds an item to the list.
+	 * @return 
 	 */
-	public void add(T item, List<?> old) {
+	public boolean add(T item, List<?> old) {
 		if (item == null || old == null || !old.contains(item))
 			throw new IllegalArgumentException();
 		old.remove(item);
-		this.list.addLast(new TimeOutListItem<T>(item, old));
+		this.list.add(new TimeOutListItem<T>(item, (List<T>) old));
+		return true;
 	}
 
 	/**
@@ -39,17 +41,6 @@ public class TimeOutList<T extends Deleteable> {
 				this.list.remove(listItem);
 				break;
 			}
-		}
-	}
-
-	/**
-	 * Permanantly deletes items from the list that have past their expiry time.
-	 */
-	void deleteOld() {
-		Timestamp now = new Timestamp(new Date().getTime());
-		for (TimeOutListItem<T> listItem : this.list) {
-			if (listItem.timeOut.before(now))
-				this.list.remove(listItem);
 		}
 	}
 

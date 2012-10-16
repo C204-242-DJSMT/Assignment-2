@@ -35,14 +35,7 @@ public class TeachingManager {
 	/**
 	 *
 	 */
-	public void deleteOld() {
-		this.deletedTeaching.deleteOld();
-	}
-
-	/**
-	 *
-	 */
-	public boolean add(Teacher t, Class c) {
+	public boolean add(Teacher t, ClassGroup c) {
 		Teaches newTeach = new Teaches(c, t);
 		if (!this.teachingList.contains(newTeach)) {
 			this.teachingList.add(newTeach);
@@ -51,5 +44,9 @@ public class TeachingManager {
 			return true;
 		}
 		return false;
+	}
+	
+	public boolean delete(Teaches t) {
+		return this.deletedTeaching.add(t, this.teachingList);
 	}
 }
