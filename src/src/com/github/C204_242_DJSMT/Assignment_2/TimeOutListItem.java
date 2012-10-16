@@ -5,7 +5,7 @@ import java.util.Date;
 import java.sql.Timestamp;
 
 /**
- * Stores an object and an expiry time for the TimeOutList structure.
+ * Stores an object, its previous location and an expiry time for the TimeOutList structure.
  */
 class TimeOutListItem<T extends Deleteable> {
 	// The object being stored.
@@ -16,7 +16,8 @@ class TimeOutListItem<T extends Deleteable> {
 	public final List oldLocation;
 
 	/**
-	 *
+	 * Instantiates the TimeOutListItem with an object, its previous location and Timestamp based
+	 * on that objects defined time it should be temporaily stored before permanent deletion.
 	 */
 	public TimeOutListItem(T item, List<T> old) {
 		if (item == null || old == null)
@@ -33,9 +34,6 @@ class TimeOutListItem<T extends Deleteable> {
 		this.oldLocation.add(item);
 	}
 
-	/**
-	 *
-	 */
 	public boolean equals(Object obj) {
 		if (obj.getClass() == this.item.getClass())
 			return this.item == (T)obj;

@@ -6,13 +6,13 @@ import java.util.LinkedList;
  * Manager for all Class objects.
  */
 public class ClassManager {
-	//
+	// The singleton instance of ClassManager
 	static private ClassManager singleton = null;
-	//
+	// List containing all ClassGroup objects.
 	private LinkedList<ClassGroup> classList = null;
 	
 	/**
-	 *
+	 * Instantiates the ClassManager.
 	 */
 	private ClassManager() {
 		// Constructor should never be called twice.
@@ -31,7 +31,7 @@ public class ClassManager {
 	}
 
 	/**
-	 *
+	 * Creates a new class, adding it to the list provided it is uniqely identified.
 	 */
 	public boolean addClass(String name, String description) {
 		ClassGroup newClass = new ClassGroup(name, description);

@@ -1,25 +1,18 @@
 package com.github.C204_242_DJSMT.Assignment_2;
 
 /**
- * Association class for teachers and the classes they teach.
+ * Association class for a teacher and a class they teach.
  */
 public class Teaches implements Deleteable {
-	//
+	// Reference to the Teacher.
 	public final Teacher teacher;
-	//
+	// Reference to a class taught by the teacher.
 	public final ClassGroup classTaught;
-	//
+	// Length of time to store a deleted Teaches object before permanent deletion (1 Day).
 	private static int deleteTimeout = 60 * 60 * 1000;
 
 	/**
-	 *
-	 */
-	public int getTimeOut() {
-		return deleteTimeout;
-	}
-
-	/**
-	 *
+	 * Instantiates a new Teaches object. Neither parameter may be null.
 	 */
 	public Teaches(ClassGroup c, Teacher t) {
 		if (c == null || t == null) 
@@ -28,9 +21,6 @@ public class Teaches implements Deleteable {
 		this.classTaught = c;
 	}
 
-	/**
-	 *
-	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof Teaches) {
 			Teaches t = (Teaches)obj;
@@ -39,10 +29,11 @@ public class Teaches implements Deleteable {
 		return false;
 	}
 
-	/**
-	 *
-	 */
 	public String toString() {
 		return this.teacher.toString() + " teaches " + this.classTaught.toString();
+	}
+
+	public int getTimeOut() {
+		return deleteTimeout;
 	}
 }

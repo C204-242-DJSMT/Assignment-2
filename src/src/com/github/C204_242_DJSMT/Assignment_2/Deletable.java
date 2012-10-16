@@ -1,7 +1,7 @@
 package com.github.C204_242_DJSMT.Assignment_2;
 
 /**
- * Interface inherited by objects that can be deleted from the system.
+ * Interface inherited by objects that can be deleted from the system but stored temporarily in case of a restoration request.
  */
 interface Deleteable {
 

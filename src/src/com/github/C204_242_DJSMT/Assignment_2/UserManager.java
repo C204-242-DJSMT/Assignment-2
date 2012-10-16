@@ -6,13 +6,14 @@ import java.util.LinkedList;
  * Manager class for User objects.
  */
 public class UserManager {
-	//
+	// The single instance of the class.
 	static private UserManager singleton = null;
-	//
+	// List of all user objects.
 	private LinkedList<User> userList = null;
 	
 	/**
-	 *
+	 * Instantiates the UserManager Object. 
+	 * As UserManager is a singleton, this should not be used if an instance exists.
 	 */
 	private UserManager() {
 		// Constructor should never be called twice.
@@ -21,10 +22,16 @@ public class UserManager {
 		this.userList = new LinkedList<User>();
 	}
 	
+	/**
+	 * Creates a new Teacher user and adds them to the list of users.
+	 */
 	public boolean addTeacher(String name) {
 		return userList.add(new Teacher(name));
 	}
 	
+	/**
+	 * Creates a new Student user and adds them to the list of users.
+	 */
 	public boolean addStudent(String name) {
 		return userList.add(new Student(name));
 	}

@@ -12,9 +12,6 @@ public class Teacher extends User {
 		super(name);
 	}
 
-	/**
-	 *
-	 */
 	public String toString() {
 		return "Teacher: " + super.toString();
 	}
