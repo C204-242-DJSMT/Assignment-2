@@ -39,7 +39,7 @@ public class EnrolmentManager {
 	public boolean addEnrolment(Student s, Class c) {
 		Enrolment enrol = new Enrolment(s, c);
 		if (!this.enrolments.contains(enrol)) {
-			this.enrolments.add(enrol)
+			this.enrolments.add(enrol);
 			if (this.deletedEnrolments.contains(enrol))
 				this.deletedEnrolments.remove(enrol);
 			return true;

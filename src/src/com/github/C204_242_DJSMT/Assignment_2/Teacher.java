@@ -3,7 +3,7 @@ package com.github.C204_242_DJSMT.Assignment_2;
 /**
  * Represents an individual teacher user.
  */
-public class Teacher extends user {
+public class Teacher extends User {
 
 	/**
 	 *

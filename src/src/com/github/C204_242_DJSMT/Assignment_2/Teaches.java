@@ -32,9 +32,9 @@ public class Teaches implements Deleteable {
 	 *
 	 */
 	public boolean equals(Object obj) {
-		if (obj instanceof Teaches) }{
+		if (obj instanceof Teaches) {
 			Teaches t = (Teaches)obj;
-			return t.teacher == this.teacher && t.classTaught == this.classTaught
+			return t.teacher == this.teacher && t.classTaught == this.classTaught;
 		}
 		return false;
 	}

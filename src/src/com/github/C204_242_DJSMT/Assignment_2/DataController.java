@@ -22,7 +22,7 @@ public class DataController {
 	 */
 	static public DataController getInstance() {
 		if (singleton == null)
-			singleton  new DataController();
+			singleton = new DataController();
 		return singleton;
 	}
 
@@ -36,7 +36,7 @@ public class DataController {
 		this.enrolmentManager = EnrolmentManager.getInstance();
 		this.teachingManager = TeachingManager.getInstance();
 		this.classManager = ClassManager.getInstance();
-		this.userManager UserManager.getInstance();
+		this.userManager = UserManager.getInstance();
 	}
 
 	/**

@@ -9,6 +9,6 @@ public class Test {
 	 *
 	 */
 	public static void main(String[] args) {
-		Datacontroller data = DataController.getInstance();
+		DataController data = DataController.getInstance();
 	}
 }
