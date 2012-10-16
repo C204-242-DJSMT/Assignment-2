@@ -5,7 +5,8 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 public class EnrolmentManagerTest {
-	@Test public void trueTest() {
-		Assert.assertTrue(true);
+	// Check that only one instance of a singleton class is created.
+	@Test public void singletonTest() {
+		Assert.assertTrue(EnrolmentManager.getInstance() == EnrolmentManager.getInstance());
 	}
 }
