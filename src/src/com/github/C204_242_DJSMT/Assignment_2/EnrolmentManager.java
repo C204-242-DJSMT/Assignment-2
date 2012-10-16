@@ -54,7 +54,7 @@ public class EnrolmentManager {
 	 */
 	public boolean delete(Enrolment enrol) {
 		// Enrolment instance being deleted must be in the general list in the first place.
-		if (!this.enrolment.contains(enrol))
+		if (!this.enrolments.contains(enrol))
 			throw new IllegalArgumentException();
 		return this.deletedEnrolments.add(enrol, this.enrolments);
 	}
