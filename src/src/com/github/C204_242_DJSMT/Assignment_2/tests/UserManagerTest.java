@@ -5,7 +5,32 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 public class UserManagerTest {
+	// Assert that only one instance of a singleton class is created.
 	@Test public void singletonTest() {
 		Assert.assertTrue(UserManager.getInstance() == UserManager.getInstance());
+	}
+	
+	@Test public void addTeacherTest1() {
+		UserManager.getInstance().addTeacher("NAME");
+		Assert.assertTrue(UserManager.getInstance().contains(new Teacher("NAME")));
+	}
+	
+	@Test(expected=IllegalArgumentException.class)  
+	public void addTeacherTest2() {
+		UserManager.getInstance().addTeacher("NAME");
+	}
+	
+	@Test public void addStudentest1() {
+		UserManager.getInstance().addStudent("NAME");
+		Assert.assertTrue(UserManager.getInstance().contains(new Student("NAME")));
+	}
+	
+	@Test(expected=IllegalArgumentException.class)  
+	public void addStudentTest2() {
+		UserManager.getInstance().addStudent("NAME");
+	}
+	
+	@Test public void deleteTest1() {
+		
 	}
 }

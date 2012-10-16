@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class UserTest {
 	@Test 
-	public void singletontest() {
+	public void trueTest() {
 		Assert.assertTrue(true);
 	}
 }

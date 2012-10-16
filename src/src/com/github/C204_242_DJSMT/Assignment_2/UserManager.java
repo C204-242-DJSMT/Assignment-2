@@ -44,4 +44,11 @@ public class UserManager {
 			singleton = new UserManager();
 		return singleton;
 	}
+	
+	/**
+	 * Returns true if a given object is in the list of users.
+	 */
+	public bool contains(User item) {
+		return this.userList.contains(item);
+	}
 }
