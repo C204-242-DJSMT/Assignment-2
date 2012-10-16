@@ -9,7 +9,7 @@ public class Student extends User {
 		super(name);
 	}
 	
-	@Overrride
+	@Override
 	public String toString() {
 		return "Student: " + super.toString();
 		

@@ -41,4 +41,8 @@ public class ClassManager {
 		}
 		return false;
 	}
+	
+	public boolean contains(ClassGroup group) {
+		return this.classList.contains(group);
+	}
 }

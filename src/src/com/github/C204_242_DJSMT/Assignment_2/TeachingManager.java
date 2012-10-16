@@ -21,6 +21,7 @@ public class TeachingManager {
 		assert (singleton == null);
 
 		this.teachingList = new LinkedList<Teaches>();
+		this.deletedTeaching = new TimeOutList<Teaches>();
 	}
 
 	/**
@@ -35,16 +36,16 @@ public class TeachingManager {
 	/**
 	 * Creates a new Teacher-class link, adding it to the list provided it does not already exist within the list.
 	 */
-	public boolean add(Teacher t, ClassGroup c) {
+	public Teaches add(Teacher t, ClassGroup c) {
 		Teaches newTeach = new Teaches(c, t);
 		if (!this.teachingList.contains(newTeach)) {
 			this.teachingList.add(newTeach);
 			// If a object matching the new instance has been recently deleeted, remove that record.
 			if (this.deletedTeaching.contains(newTeach))
 				this.deletedTeaching.remove(newTeach);
-			return true;
+			return newTeach;
 		}
-		return false;
+		return null;
 	}
 	
 	/**
@@ -56,5 +57,9 @@ public class TeachingManager {
 		if (!this.teachingList.contains(t))
 			throw new IllegalArgumentException();
 		return this.deletedTeaching.add(t, this.teachingList);
+	}
+	
+	public boolean contains(Teaches t) {
+		return this.teachingList.contains(t);
 	}
 }

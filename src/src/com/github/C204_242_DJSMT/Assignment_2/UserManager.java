@@ -48,7 +48,7 @@ public class UserManager {
 	/**
 	 * Returns true if a given object is in the list of users.
 	 */
-	public bool contains(User item) {
+	public boolean contains(User item) {
 		return this.userList.contains(item);
 	}
 }
