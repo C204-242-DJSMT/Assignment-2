@@ -5,7 +5,7 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 public class UserManagerTest {
-	@Test public void trueTest() {
-		Assert.assertTrue(true);
+	@Test public void singletonTest() {
+		Assert.assertTrue(UserManager.getInstance() == UserManager.getInstance());
 	}
 }

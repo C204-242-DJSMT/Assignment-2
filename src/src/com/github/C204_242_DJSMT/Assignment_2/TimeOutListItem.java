@@ -33,7 +33,8 @@ class TimeOutListItem<T extends Deleteable> {
 	public void restore() {
 		this.oldLocation.add(item);
 	}
-
+	
+	@Override
 	public boolean equals(Object obj) {
 		if (obj.getClass() == this.item.getClass())
 			return this.item == (T)obj;

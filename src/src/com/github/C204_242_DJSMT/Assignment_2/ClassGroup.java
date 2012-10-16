@@ -18,11 +18,13 @@ public class ClassGroup {
 		this.name = name;
 		this.description = description;
 	}
-
+	
+	@Override
 	public String toString() {
 		return this.name;
 	}
-
+	
+	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof ClassGroup)
 			return ((ClassGroup)obj).name == this.name;

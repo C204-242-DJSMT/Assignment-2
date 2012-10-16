@@ -21,6 +21,7 @@ public class Teaches implements Deleteable {
 		this.classTaught = c;
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Teaches) {
 			Teaches t = (Teaches)obj;
@@ -28,11 +29,13 @@ public class Teaches implements Deleteable {
 		}
 		return false;
 	}
-
+	
+	@Override
 	public String toString() {
 		return this.teacher.toString() + " teaches " + this.classTaught.toString();
 	}
-
+	
+	@Override
 	public int getTimeOut() {
 		return deleteTimeout;
 	}

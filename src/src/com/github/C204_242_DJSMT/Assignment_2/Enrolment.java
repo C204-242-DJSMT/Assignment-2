@@ -21,6 +21,7 @@ public class Enrolment implements Deleteable {
 		this.enrolledClass = c;
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Enrolment) {
 			Enrolment enrol = (Enrolment)obj;
@@ -28,11 +29,13 @@ public class Enrolment implements Deleteable {
 		}
 		return false;
 	}
-
+	
+	@Override
 	public String toString() {
 		return this.enrolledStudent.toString() + " enrolled in " + this.enrolledClass.toString();
 	}
-
+	
+	@Override
 	public int getTimeOut() {
 		return deleteTimeout;
 	}
