@@ -1,15 +1,15 @@
 package com.github.C204_242_DJSMT.Assignment_2.tests;
 
 import junit.framework.Assert;
-import org.junit.Test;
+import org.junit.*;
 import com.github.C204_242_DJSMT.Assignment_2.UserManager;
 import com.github.C204_242_DJSMT.Assignment_2.Teacher;
 import com.github.C204_242_DJSMT.Assignment_2.Student;
 
 public class UserManagerTest {
 	@Before public void preconditions() {
-		UserManager.getInstance().addTeacher(new Teacher("Name2"));
-		UserManager.getInstance().addStudent(new Student("Name2"));
+		UserManager.getInstance().addTeacher("NAME2");
+		UserManager.getInstance().addStudent("NAME2");
 	}
 
 	// Check that only one instance of a singleton class is created.
