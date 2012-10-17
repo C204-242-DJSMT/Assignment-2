@@ -15,9 +15,9 @@ public class EnrolmentManagerTest {
 	@Test public void createDeleteTest() {
 		Student s = new Student("Name");
 		ClassGroup cls = new ClassGroup("name", "description");
-		Enrolment enrol = EnrolmentManager.getInstance().add(s, cg);
-		Assert.assertTrue(TeachingManager.getInstance().contains(enrol));
-		Assert.assertTrue(TeachingManager.getInstance().delete(enrol));
-		Assert.assertFalse(TeachingManager.getInstance().contains(enrol));
+		Teaches te = TeachingManager.getInstance().add(t, cg);
+		Assert.assertTrue(TeachingManager.getInstance().contains(te));
+		Assert.assertTrue(TeachingManager.getInstance().delete(te));
+		Assert.assertFalse(TeachingManager.getInstance().contains(te));
 	}
 }

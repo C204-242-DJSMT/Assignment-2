@@ -9,20 +9,17 @@ import com.github.C204_242_DJSMT.Assignment_2.ClassGroup;
 import com.github.C204_242_DJSMT.Assignment_2.Teaches;
 
 public class TeachingManagerTest {
-	Teacher testTeacher = new Techer("name");
-	ClassGroup testClass = new ClassGroup("name", "description");
-	
-	@Test public void creationTest1() {
-		new Enrolment(testTeacher, testClass);
+	// Check that only one instance of a singleton class is created.
+	@Test public void singletonTest() {
+		Assert.assertTrue(TeachingManager.getInstance() == TeachingManager.getInstance());
 	}
 	
-	@Test (expected=IllegalArgumentException.class)
-	public void creationTest2() {
-		new Enrolment(null, testClass);
-	}
-	
-	@Test (expected=IllegalArgumentException.class)
-	public void creationTest3() {
-		new Enrolment(testTeacher, null);
+	@Test public void createDeleteTest() {
+		Teacher t = new Teacher("Name");
+		ClassGroup cls = new ClassGroup("Name", "Description");
+		Teaches te = TeachingManager.getInstance().add(t, cg);
+		Assert.assertTrue(TeachingManager.getInstance().contains(te));
+		Assert.assertTrue(TeachingManager.getInstance().delete(te));
+		Assert.assertFalse(TeachingManager.getInstance().contains(te));
 	}
 }

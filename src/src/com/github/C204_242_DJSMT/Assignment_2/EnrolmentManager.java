@@ -36,16 +36,16 @@ public class EnrolmentManager {
 	/**
 	 * Creates an new enrolment object, adding it to the list provided such an enrollment does not already exist.
 	 */
-	public Enrolment addEnrolment(Student s, ClassGroup c) {
+	public boolean addEnrolment(Student s, ClassGroup c) {
 		Enrolment enrol = new Enrolment(s, c);
 		if (!this.enrolments.contains(enrol)) {
 			this.enrolments.add(enrol);
 			// If a matching enrolment has recently been deleted, remove that record of the object.
 			if (this.deletedEnrolments.contains(enrol))
 				this.deletedEnrolments.remove(enrol);
-			return enrol;
+			return true;
 		}
-		return null;
+		return false;
 	}
 
 	/**
