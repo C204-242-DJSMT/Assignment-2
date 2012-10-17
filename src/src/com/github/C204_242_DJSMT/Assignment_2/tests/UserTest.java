@@ -8,8 +8,7 @@ import com.github.C204_242_DJSMT.Assignment_2.Teacher;
 
 public class UserTest {
 	
-	@Test
-	public void creationTest1() {
+	@Test public void creationTest1() {
 		new Teacher("Name");
 	}
 	

@@ -11,4 +11,12 @@ public class EnrolmentManagerTest {
 	@Test public void singletonTest() {
 		Assert.assertTrue(EnrolmentManager.getInstance() == EnrolmentManager.getInstance());
 	}
+	
+	@Test public void addTest1() {
+		
+	}
+	
+	@Test public void deleteTest1() {
+		
+	}
 }

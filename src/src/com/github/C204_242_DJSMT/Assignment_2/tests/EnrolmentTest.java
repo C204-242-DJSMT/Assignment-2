@@ -5,7 +5,20 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 public class EnrolmentTest {
-	@Test public void trueTest() {
-		Assert.assertTrue(true);
+	Student testStudent = new Student("name");
+	ClassGroup testClass = new ClassGroup("name", "description");
+	
+	@Test public void creationTest1() {
+		new Enrolment(testStudent, testClass);
+	}
+	
+	@Test (expected=IllegalArgumentException.class)
+	public void creationTest2() {
+		new Enrolment(null, testClass);
+	}
+	
+	@Test (expected=IllegalArgumentException.class)
+	public void creationTest3() {
+		new Enrolment(testStudent, null);
 	}
 }
