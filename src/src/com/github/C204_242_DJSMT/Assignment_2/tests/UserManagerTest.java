@@ -7,11 +7,6 @@ import com.github.C204_242_DJSMT.Assignment_2.Teacher;
 import com.github.C204_242_DJSMT.Assignment_2.Student;
 
 public class UserManagerTest {
-	@Before public void preconditions() {
-		UserManager.getInstance().addTeacher("NAME2");
-		UserManager.getInstance().addStudent("NAME2");
-	}
-
 	// Check that only one instance of a singleton class is created.
 	@Test public void singletonTest() {
 		Assert.assertTrue(UserManager.getInstance() == UserManager.getInstance());
@@ -24,7 +19,7 @@ public class UserManagerTest {
 	
 	@Test  
 	public void addTeacherTest2() {
-		Assert.assertFalse(UserManager.getInstance().addTeacher("NAME2"));
+		Assert.assertFalse(UserManager.getInstance().addTeacher("NAME1"));
 	}
 	
 	@Test public void addStudentTest1() {
@@ -34,7 +29,7 @@ public class UserManagerTest {
 	
 	@Test
 	public void addStudentTest2() {
-		Assert.assertFalse(UserManager.getInstance().addStudent("NAME2"));
+		Assert.assertFalse(UserManager.getInstance().addStudent("NAME1"));
 	}
 
 }
