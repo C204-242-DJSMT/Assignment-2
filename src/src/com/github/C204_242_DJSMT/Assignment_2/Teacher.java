@@ -16,4 +16,9 @@ public class Teacher extends User {
 	public String toString() {
 		return "Teacher: " + super.toString();
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return (this.name == ((User)obj).name);
+	}
 }

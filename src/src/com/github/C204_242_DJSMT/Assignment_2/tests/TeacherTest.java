@@ -1,10 +1,8 @@
 package com.github.C204_242_DJSMT.Assignment_2.tests;
 
 import junit.framework.Assert;
-
 import org.junit.Test;
-
-import com.github.C204_242_DJSMT.Assignment_2.*;
+import com.github.C204_242_DJSMT.Assignment_2.Teacher;
 
 public class TeacherTest {
 	

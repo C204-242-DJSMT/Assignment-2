@@ -1,8 +1,10 @@
 package com.github.C204_242_DJSMT.Assignment_2.tests;
 
 import junit.framework.Assert;
-
 import org.junit.Test;
+import com.github.C204_242_DJSMT.Assignment_2.Student;
+import com.github.C204_242_DJSMT.Assignment_2.ClassGroup;
+import com.github.C204_242_DJSMT.Assignment_2.Enrolment;
 
 public class EnrolmentTest {
 	Student testStudent = new Student("name");

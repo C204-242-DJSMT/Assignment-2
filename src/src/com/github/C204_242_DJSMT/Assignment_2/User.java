@@ -20,4 +20,9 @@ public abstract class User {
 	public String toString() {
 		return this.name;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return super.equals(obj);
+	}
 }
