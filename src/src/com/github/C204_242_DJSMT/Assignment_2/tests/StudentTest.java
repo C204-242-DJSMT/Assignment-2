@@ -20,4 +20,12 @@ public class StudentTest {
 	public void creationTest3() {
 		new Student(null);
 	}
+
+	@Test public void equalityTest1() {
+		Assert.assertTrue(new Student("Name").equals(new Student("Name")));
+	}
+
+	@Test public void equalityTest2() {
+		Assert.assertFalse(new Student("Name").equals(new Student("Different Name")));
+	}
 }

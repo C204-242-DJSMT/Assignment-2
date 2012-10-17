@@ -7,6 +7,7 @@ import org.junit.Test;
 import com.github.C204_242_DJSMT.Assignment_2.TeachingManager;
 import com.github.C204_242_DJSMT.Assignment_2.Teacher;
 import com.github.C204_242_DJSMT.Assignment_2.ClassGroup;
+import com.github.C204_242_DJSMT.Assignment_2.Teaches;
 
 public class TeachingManagerTest {
 	// Check that only one instance of a singleton class is created.

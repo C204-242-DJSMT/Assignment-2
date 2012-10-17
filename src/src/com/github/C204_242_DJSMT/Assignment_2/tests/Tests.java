@@ -1,5 +1,6 @@
 package com.github.C204_242_DJSMT.Assignment_2.tests;
 
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
