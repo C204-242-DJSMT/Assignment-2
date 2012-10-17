@@ -16,9 +16,9 @@ public class TeachingManagerTest {
 	}
 	
 	@Test public void createDeleteTest() {
-		Teacher t = new Teacher("Blah");
-		ClassGroup cls = new ClassGroup("Blah", "blah2");
-		Teaches te = TeachingManager.getInstance().add(t, cg);
+		Teacher t = new Teacher("Name");
+		ClassGroup cls = new ClassGroup("Name", "description");
+		Teaches te = TeachingManager.getInstance().add(t, cls);
 		Assert.assertTrue(TeachingManager.getInstance().contains(te));
 		Assert.assertTrue(TeachingManager.getInstance().delete(te));
 		Assert.assertFalse(TeachingManager.getInstance().contains(te));

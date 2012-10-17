@@ -3,6 +3,7 @@ package com.github.C204_242_DJSMT.Assignment_2.tests;
 import junit.framework.Assert;
 import org.junit.Test;
 import com.github.C204_242_DJSMT.Assignment_2.EnrolmentManager;
+import com.github.C204_242_DJSMT.Assignment_2.Enrolment;
 import com.github.C204_242_DJSMT.Assignment_2.Student;
 import com.github.C204_242_DJSMT.Assignment_2.ClassGroup;
 
@@ -15,9 +16,9 @@ public class EnrolmentManagerTest {
 	@Test public void createDeleteTest() {
 		Student s = new Student("Name");
 		ClassGroup cls = new ClassGroup("name", "description");
-		Teaches te = TeachingManager.getInstance().add(t, cg);
-		Assert.assertTrue(TeachingManager.getInstance().contains(te));
-		Assert.assertTrue(TeachingManager.getInstance().delete(te));
-		Assert.assertFalse(TeachingManager.getInstance().contains(te));
+		Enrolment enrol = EnrolmentManager.getInstance().addEnrolment(s, cls);
+		Assert.assertTrue(EnrolmentManager.getInstance().contains(enrol));
+		Assert.assertTrue(EnrolmentManager.getInstance().delete(enrol));
+		Assert.assertFalse(EnrolmentManager.getInstance().contains(enrol));
 	}
 }
