@@ -22,9 +22,9 @@ public class UserManagerTest {
 		Assert.assertTrue(UserManager.getInstance().contains(new Teacher("NAME1")));
 	}
 	
-	@Test(expected=IllegalArgumentException.class)  
+	@Test  
 	public void addTeacherTest2() {
-		UserManager.getInstance().addTeacher("NAME2");
+		Assert.assertFalse(UserManager.getInstance().addTeacher("NAME2"));
 	}
 	
 	@Test public void addStudentTest1() {
@@ -32,9 +32,9 @@ public class UserManagerTest {
 		Assert.assertTrue(UserManager.getInstance().contains(new Student("NAME1")));
 	}
 	
-	@Test(expected=IllegalArgumentException.class)  
+	@Test
 	public void addStudentTest2() {
-		UserManager.getInstance().addStudent("NAME2");
+		Assert.assertFalse(UserManager.getInstance().addStudent("NAME2"));
 	}
 
 }

@@ -1,0 +1,83 @@
+Test Plan 
+Enrolment
+	- On object creation
+		Student Reference must be non-null
+		Class reference must be non null
+		Check that valid inputs result in an object
+		Check any combination of invalid inputs results in an exception
+
+	- Object use
+		Check two objects referering to the same Student/Class objects are identified as equal
+
+
+
+
+Teaches
+	- On object creation
+		Teacher Reference must be non-null
+		Class reference must be non null
+		Check that valid inputs result in an object
+		Check any combination of invalid inputs results in an exception
+
+	- Object use
+		Check two objects referering to the same Teacher/Class objects are identified as equal
+
+
+User (Teacher & Student)
+	- On object creation
+		name property must be a non null and non empty String
+		Check that valid inputs result in an object
+		Check any combination of invalid inputs results in an exception
+
+	- Object use
+		Check two users the same sub class and identity values are identified as equal
+
+
+Test plan ClassGroup
+	- On object creation
+		name and description properties must be a non null and non empty String
+		Check that valid inputs result in an object
+		Check any combination of invalid inputs results in an exception
+
+	- Object use
+		Check two ClassGroup objects with the same identity(name) values are identified as equal
+
+EnrolmentManager
+	Ensure only one instance exists (Singleton)
+	Ensure an object can be added to the list correctly if a duplicate does not exist
+		Check the list of enrolments contains the added object after adding an object
+		Check the list of deleted enrolments does not contain the added object after adding an object
+		Check an object is not added to the list if a duplicate is already in the list
+	Ensure an object can be deleted correctly 
+		Check the list of enrolments does not contain the deleted object after deleteing an object
+		Check the list of deleted enrolments does contain the deleted object after deleteing an object
+	Ensure an object can be restores correctly 
+		Check the list of enrolments does contain the deleted object after restoring an object
+		Check the list of deleted enrolments does not contain the deleted object after restoring an object
+
+TeachingManager
+	Ensure only one instance exists (Singleton)
+	Ensure an object can be added to the list correctly if a duplicate does not exist
+		Check the list of Teaches objects contains the added object after adding an object
+		Check the list of deleted Teaches objects does not contain the added object after adding an object
+		Check an object is not added to the list if a duplicate is already in the list
+	Ensure an object can be deleted correctly 
+		Check the list of Teaches objects does not contain the deleted object after deleteing an object
+		Check the list of deleted Teaches objects does contain the deleted object after deleteing an object
+	Ensure an object can be restores correctly 
+		Check the list of Teaches objects does contain the deleted object after restoring an object
+		Check the list of deleted Teaches objects does not contain the deleted object after restoring an object
+
+UserManager
+	Ensure only one instance exists (Singleton)
+	Ensure an object can be added to the list correctly if a duplicate does not exist
+		Check the list of Users contains the added object after adding an object
+		Check the list of deleted Users does not contain the added object after adding an object
+		Check an object is not added to the list if a duplicate is already in the list
+
+ClassManager
+	Ensure only one instance exists (Singleton)
+	Ensure an object can be added to the list correctly if a duplicate does not exist
+		Check the list of Classes contains the added object after adding an object
+		Check the list of deleted Classes does not contain the added object after adding an object
+		Check an object is not added to the list if a duplicate is already in the list

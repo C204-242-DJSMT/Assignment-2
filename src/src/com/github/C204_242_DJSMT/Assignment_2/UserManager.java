@@ -26,14 +26,20 @@ public class UserManager {
 	 * Creates a new Teacher user and adds them to the list of users.
 	 */
 	public boolean addTeacher(String name) {
-		return userList.add(new Teacher(name));
+		Teacher tch = new Teacher(name);
+		if (userList.contains(tch))
+			return false;
+		return userList.add(tch);
 	}
 	
 	/**
 	 * Creates a new Student user and adds them to the list of users.
 	 */
 	public boolean addStudent(String name) {
-		return userList.add(new Student(name));
+		Student sdnt = new Student(name);
+		if (userList.contains(sdnt))
+			return false;
+		return userList.add(sdnt);
 	}
 
 	/**
